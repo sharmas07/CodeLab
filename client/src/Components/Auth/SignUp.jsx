@@ -1,12 +1,13 @@
-import React from 'react'
+// import React from 'react'
 import '../Styles/SignUp.css';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+// import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 
 
 function SignUp() {
   return (
     <>
+
     <div className="signin-container" >
   <h2>Sign Up</h2>
   <form action="signup.php" method="POST">
@@ -26,13 +27,11 @@ function SignUp() {
     
     <button>Submit</button>
 
-  </form>
-
-</div>
-    
-    
+          <button>Submit</button>
+        </form>
+      </div>
     </>
-  )
+  );
 }
 
 export default SignUp
