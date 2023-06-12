@@ -1,0 +1,107 @@
+
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  width: 370px;
+  height: 600px;
+  border: 2px solid rgb(126, 75, 222);
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  background-image: linear-gradient(to right,#3799df,rgba(17, 85, 232, 0.744),rgba(63, 111, 209, 0.881));
+  box-shadow: 0 0 5px rgb(33, 107, 235),0 0 10px rgb(27, 81, 246);
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+
+
+
+
+.container:hover{
+  box-shadow: 0 0 5px rgb(33, 107, 235),0 0 10px rgb(27, 81, 246),
+  0 0 25px rgb(33, 107, 235),0 0 50px rgb(27, 81, 246);
+}
+
+.container h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  font-weight: 900;
+  color: aliceblue;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+}
+
+.sign{
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+  font-weight: bold;
+
+}
+.email{
+    margin-right: 30px;
+}
+
+
+.signup-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.signup-form input {
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.signup-form p{
+  margin-bottom: 1rem;
+}
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  transition: all 300ms;
+  min-width: 12rem;
+  font-weight: 900;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+}
+
+button:hover{
+  background-color: aliceblue;
+  color: #3799df;
+}
+
+p{
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+  font-weight:  900;
+  color: black;
+}
+
+@media screen and (max-width:600px) { 
+
+
+  .container{
+    flex-direction: column;
+  }
+  
+
+}
+
+
+
+.singupImg{
+  width: 600px;
+}
+.sign_Img{
+  width: 400px;
+}
