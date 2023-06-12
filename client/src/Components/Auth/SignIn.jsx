@@ -4,7 +4,7 @@ import '../Styles/SignUp.css';
 function SignIn() {
   return (
    <>
-   <div className="container" >
+   <div className="signin-container" >
   <h2>Sign in</h2>
   <form action="signup.php" method="POST">
     <div className="sign">
