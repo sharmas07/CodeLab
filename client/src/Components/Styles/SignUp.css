@@ -24,12 +24,12 @@
 
 
 
-.container:hover{
+.signin-container:hover{
   box-shadow: 0 0 5px rgb(33, 107, 235),0 0 10px rgb(27, 81, 246),
   0 0 25px rgb(33, 107, 235),0 0 50px rgb(27, 81, 246);
 }
 
-.container h2 {
+.signin-container h2 {
   margin-bottom: 20px;
   font-size: 2rem;
   font-weight: 900;
@@ -91,7 +91,7 @@ p{
 @media screen and (max-width:600px) { 
 
 
-  .container{
+  .signin-container{
     flex-direction: column;
   }
   
