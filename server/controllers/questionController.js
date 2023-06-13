@@ -21,7 +21,7 @@ export const addQues = async (req, res) => {
 
 export const submitQues = async (req, res) => {
     try {
-        const { submittedCode } = req.body;
+        const { code } = req.body;
         // TODO: compilation check of the submitted code
 
         console.log('line 27')
@@ -40,7 +40,7 @@ export const submitQues = async (req, res) => {
             },
             data: {
                 // source_code: "#include <stdio.h>\n\nint main(void) {\n  char name[10];\n  scanf(\"%s\", name);\n  printf(\"hello, %s\n\", name);\n  return 0;\n}",
-                source_code: "print('hi')",
+                source_code: code,
                 language_id: 71,
                 // stdin: "",
                 expected_output:"hello"
