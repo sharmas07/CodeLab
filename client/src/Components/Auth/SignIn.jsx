@@ -1,8 +1,9 @@
-import React from 'react'
+// import React from 'react'
 import '../Styles/SignUp.css';
 
 function SignIn() {
   return (
+
    <>
    <div className="signin-container" >
   <h2>Sign in</h2>
@@ -16,11 +17,11 @@ function SignIn() {
      
     <button>Login</button>
     </form>
-
-    </div>
- 
-   </>
-  )
+          <button>Login</button>
+        {/* </form> */}
+      </div>
+    </>
+  );
 }
 
 export default SignIn

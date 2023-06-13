@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import './QuestionsView.css'
 const QuestionsView = () => {
     return (
@@ -14,7 +14,7 @@ const QuestionsView = () => {
                 <tbody>
                     <tr>
                         <td><b>1</b></td>
-                        <td>Kruskal's Algorithm</td>
+                        <td>Kruskals Algorithm</td>
                         <td>Design Analysis of Programs
                             <button> Open Ques </button>
                         </td>

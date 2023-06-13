@@ -6,6 +6,7 @@ import '../Styles/SignUp.css';
 function SignUp() {
   return (
     <>
+
     <div className="signin-container" >
   <h2>Sign Up</h2>
   <form action="signup.php" method="POST">
@@ -25,13 +26,11 @@ function SignUp() {
     
     <button>Submit</button>
 
-  </form>
-
-</div>
-    
-    
+          <button>Submit</button>
+        </form>
+      </div>
     </>
-  )
+  );
 }
 
 export default SignUp
