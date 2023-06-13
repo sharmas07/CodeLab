@@ -25,7 +25,7 @@ function SignUp() {
     <label htmlFor="teacher">Teacher</label><br /><br />
     </div>
     
-    <button>Submit</button>
+    {/* <button>Submit</button> */}
 
           <button>Submit</button>
         </form>
