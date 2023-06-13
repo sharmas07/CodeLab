@@ -1,14 +1,15 @@
 
 table {
   border-collapse: collapse;
-  max-width: 40rem;
+  max-width: 60%;
   margin: auto;
   margin-top: 7rem;
+
 }
 th, td {
   border: 2px solid black;
   padding: 8px;
-  text-align: center;
+  text-align: start;
   font-size: 20px;
   
 }
@@ -24,5 +25,12 @@ button{
 font-size: 1.1rem;
 background-color: lightgreen;
 font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.question-table{
+
+      border-collapse: separate;
+      border-spacing: 0 1em;
 
 }
