@@ -50,7 +50,7 @@ export const submitQues = async (req, res) => {
         console.log('submit got hit')
         console.log(response.data);
         const {token} = response.data
-        const output = getsubmission(token)
+        const output =await getsubmission(token)
         res.json(output)
         
         // success if code doesnt have any errors
@@ -79,6 +79,7 @@ const getsubmission = async(token)=>{
           try {
               const response = await axios.request(options);
               console.log(response.data);
+              return response.data;
           } catch (error) {
               console.error(error);
           }
