@@ -1,5 +1,4 @@
-
-.signin-container{
+.signin-container {
   margin: auto;
   display: flex;
   align-items: center;
@@ -14,19 +13,20 @@
   align-items: center;
   justify-content: center;
   height: 80vh;
-  background-image: linear-gradient(to right,#3799df,rgba(17, 85, 232, 0.744),rgba(63, 111, 209, 0.881));
-  box-shadow: 0 0 5px rgb(33, 107, 235),0 0 10px rgb(27, 81, 246);
+  background-image: linear-gradient(
+    to right,
+    #3799df,
+    rgba(17, 85, 232, 0.744),
+    rgba(63, 111, 209, 0.881)
+  );
+  box-shadow: 0 0 5px rgb(33, 107, 235), 0 0 10px rgb(27, 81, 246);
   margin-bottom: 2rem;
   margin-top: 2rem;
 }
 
-
-
-
-
-.container:hover{
-  box-shadow: 0 0 5px rgb(33, 107, 235),0 0 10px rgb(27, 81, 246),
-  0 0 25px rgb(33, 107, 235),0 0 50px rgb(27, 81, 246);
+.container:hover {
+  box-shadow: 0 0 5px rgb(33, 107, 235), 0 0 10px rgb(27, 81, 246),
+    0 0 25px rgb(33, 107, 235), 0 0 50px rgb(27, 81, 246);
 }
 
 .container h2 {
@@ -34,18 +34,18 @@
   font-size: 2rem;
   font-weight: 900;
   color: aliceblue;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
+    Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
 }
 
-.sign{
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+.sign {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
+    Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
   font-weight: bold;
-
 }
-.email{
-    margin-right: 30px;
+.email {
+  margin-right: 30px;
 }
-
 
 .signup-form label {
   display: block;
@@ -60,7 +60,7 @@
   font-size: 16px;
   margin-bottom: 20px;
 }
-.signup-form p{
+.signup-form p {
   margin-bottom: 1rem;
 }
 button {
@@ -74,35 +74,31 @@ button {
   transition: all 300ms;
   min-width: 12rem;
   font-weight: 900;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
+    Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
 }
 
-button:hover{
+button:hover {
   background-color: aliceblue;
   color: #3799df;
 }
 
-p{
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
-  font-weight:  900;
+p {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
+    Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  font-weight: 900;
   color: black;
 }
 
-@media screen and (max-width:600px) { 
-
-
-  .container{
+@media screen and (max-width: 600px) {
+  .container {
     flex-direction: column;
   }
-  
-
 }
 
-
-
-.singupImg{
+.singupImg {
   width: 600px;
 }
-.sign_Img{
+.sign_Img {
   width: 400px;
 }

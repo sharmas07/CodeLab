@@ -13,8 +13,8 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    isTeacher:{
-        type:Boolean,
+    role:{
+        type:String,
         required:true
     }
 })

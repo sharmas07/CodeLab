@@ -1,6 +1,5 @@
 import React from 'react'
 import '../Styles/SignUp.css';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 
 
