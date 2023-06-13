@@ -67,7 +67,7 @@ const getsubmission = async(token)=>{
             method: 'GET',
             url: `https://judge0-ce.p.rapidapi.com/submissions/${token}`,
             params: {
-              base64_encoded: 'true',
+              base64_encoded: 'false',
               fields: '*'
             },
             headers: {
