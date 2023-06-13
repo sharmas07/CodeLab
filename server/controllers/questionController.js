@@ -71,7 +71,7 @@ const getsubmission = async(token)=>{
               fields: '*'
             },
             headers: {
-              'X-RapidAPI-Key': 'e3896b5843msh1b72d1b4a422dd6p17c889jsn4c30d19bffbf',
+              'X-RapidAPI-Key': '768b40f4c8msh81fb616d774cbbfp1134ffjsnf9942d55c6e3',
               'X-RapidAPI-Host': 'judge0-ce.p.rapidapi.com'
             }
           };
