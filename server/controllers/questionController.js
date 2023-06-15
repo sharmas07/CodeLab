@@ -35,7 +35,7 @@ export const submitQues = async (req, res) => {
             headers: {
                 'content-type': 'application/json',
                 'Content-Type': 'application/json',
-                'X-RapidAPI-Key': judge_api,
+                'X-RapidAPI-Key': 'e3896b5843msh1b72d1b4a422dd6p17c889jsn4c30d19bffbf',
                 'X-RapidAPI-Host': 'judge0-ce.p.rapidapi.com'
             },
             data: {
@@ -71,7 +71,7 @@ const getsubmission = async(token)=>{
               fields: '*'
             },
             headers: {
-              'X-RapidAPI-Key': judge_api,
+              'X-RapidAPI-Key': 'e3896b5843msh1b72d1b4a422dd6p17c889jsn4c30d19bffbf',
               'X-RapidAPI-Host': 'judge0-ce.p.rapidapi.com'
             }
           };
