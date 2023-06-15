@@ -17,9 +17,8 @@ header {
 }
 
 .logo {
-  font-size: 24px;
   font-weight: bold;
-  width: 40px;
+  width: 400px;
 }
 
 .nav-links {
@@ -104,16 +103,18 @@ header {
   box-shadow: 0 0 5px rgb(128, 162, 229), 0 0 10px rgb(127, 127, 238),
     0 0 25px rgb(123, 123, 220), 0 0 50px rgb(109, 156, 252);
 }
-
-.i {
-  width: 700px;
+.image{
+  width: 70rem;
 }
-
 .start {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin-left: 2.5rem;
+}
+.start > h1{
+  font-size: 3.5rem;
+  font-weight: bolder;
 }
 
 .home-content {
@@ -135,7 +136,7 @@ header {
     flex-direction: column-reverse;
   }
 
-  .i {
+  .image {
     width: 300px;
   }
   .start {

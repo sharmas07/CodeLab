@@ -6,8 +6,8 @@ function QuestionText({name}) {
     <>
    
         <Card body>
-          {name}
-
+          
+          <p style={{fontWeight:'bold', fontSize:'18px'}}>{name}</p>
         </Card>
    
     </>

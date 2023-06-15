@@ -1,43 +1,44 @@
-
-
-.page{
+.page {
   display: flex;
   align-items: center;
   justify-content: space-around;
   height: 100vh;
-
-
 }
 
-
-.containe{
-  
+.card_container {
   width: 350px;
   padding: 40px;
-  /* transform: translate(-50%, -50%); */
   background: rgba(24, 20, 20, 0.987);
   box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
   color: aliceblue;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
-  font-weight: bold;
-  
-}
-
-.email{
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 2rem;  
 }
 
-.roll{
+.signup_container > div{
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+.signup_container > div > input{
+  border-radius: 8px;
+  border: none;
+  padding: 0.2rem;
+}
+.roll {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   margin-bottom: 20px;
 }
 
-
-.btnElement{
+.btnElement {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -45,34 +46,25 @@
   width: 80px;
   padding-top: 10px;
   padding-bottom: 10px;
-  background: linear-gradient(45deg, transparent,#007bff);
+  background: linear-gradient(45deg, transparent, #007bff);
   cursor: pointer;
   margin-bottom: 20px;
   color: #fff;
   border-radius: 5px;
-  
+  border: none;
 }
 
-.btnElement:hover{
-  box-shadow: 0 0 5px  rgb(0, 89, 255),
-              0 0 25px    rgb(0, 89, 255),
-              0 0 50px  rgb(0, 89, 255),
-              0 0 100px  rgb(0, 89, 255);
-  
-
+.btnElement:hover {
+  box-shadow: 0 0 5px rgb(0, 89, 255), 0 0 25px rgb(0, 89, 255),
+    0 0 50px rgb(0, 89, 255), 0 0 100px rgb(0, 89, 255);
 }
 
-
-.i{
-  width: 400px;
+.i {
+  width: 500px;
 }
 
-@media screen and (max-width:600px) { 
-  
-  
-  .page{
+@media screen and (max-width: 600px) {
+  .page {
     flex-direction: column-reverse;
   }
-  
-
 }

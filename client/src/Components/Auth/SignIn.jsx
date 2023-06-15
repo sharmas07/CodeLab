@@ -35,10 +35,11 @@ function SignIn() {
   return (
     <>
       <div className="page">
-        <div className="containe">
+        <div className="card_container">
           <h2>Sign in</h2>
           <form>
-            <div className="sign">
+            <div className="signup_container">
+              <div>
               <label htmlFor="email" className="email">
                 Email:{" "}
               </label>
@@ -50,22 +51,23 @@ function SignIn() {
                 onChange={handleChangeEmail}
                 required
               />
-              <br />
-              <br />
-              <label htmlFor="password" className="pass">
+              </div>
+             
+             <div>
+             <label htmlFor="password" className="pass">
                 Password:{" "}
               </label>
               <input type="password" id="password" name="password" value={password} 
               onChange={handleChangePassword}
               required />
-              <br />
-              <br />
+             </div>
+             
             </div>
             <p>
               {" "}
-              Create account? <Link to="/auth/signup">Sign Up</Link>
+              Don't have an account ? <Link to="/auth/signup">Sign Up</Link>
             </p>
-            <span onClick={handleLogin} className="btnElement"  >Login</span>
+            <button onClick={handleLogin} className="btnElement"  >Login</button>
           </form>
         </div>
         <img src={i} className="i" alt="" />

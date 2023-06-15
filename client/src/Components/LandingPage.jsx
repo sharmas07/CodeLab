@@ -1,14 +1,14 @@
 import React from "react";
 import "./Styles/LandingPage.css";
 import { Link } from "react-router-dom";
-import g from "../images/G.png";
-import i from "../images/pg.png";
+import logo from "../images/logo.png";
+import home_image from "../images/pg.png";
 function Header() {
   return (
     <>
       <header>
         <div className="logo">
-          <img src={g} className="logo" alt="" />
+          <img src={logo} className="logo" alt="" />
         </div>
         <div className="nav-links">
           <a href="#" className="home">
@@ -28,7 +28,7 @@ function Header() {
               Start Coding
             </Link>
           </div>
-        <img src={i} className="i" alt="" />
+        <img src={home_image} className="image" alt="" />
         </div>
       </div>
     </>

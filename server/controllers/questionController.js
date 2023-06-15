@@ -23,7 +23,7 @@ export const submitQues = async (req, res) => {
     try {
         const { code } = req.body;
         // TODO: compilation check of the submitted code
-
+        const judge_api = process.env.JUDGE_API
         console.log('line 27')
         const options = {
             method: 'POST',
@@ -35,7 +35,7 @@ export const submitQues = async (req, res) => {
             headers: {
                 'content-type': 'application/json',
                 'Content-Type': 'application/json',
-                'X-RapidAPI-Key': '768b40f4c8msh81fb616d774cbbfp1134ffjsnf9942d55c6e3',
+                'X-RapidAPI-Key': judge_api,
                 'X-RapidAPI-Host': 'judge0-ce.p.rapidapi.com'
             },
             data: {
@@ -71,7 +71,7 @@ const getsubmission = async(token)=>{
               fields: '*'
             },
             headers: {
-              'X-RapidAPI-Key': '768b40f4c8msh81fb616d774cbbfp1134ffjsnf9942d55c6e3',
+              'X-RapidAPI-Key': judge_api,
               'X-RapidAPI-Host': 'judge0-ce.p.rapidapi.com'
             }
           };

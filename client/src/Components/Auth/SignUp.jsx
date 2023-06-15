@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import "../Styles/SignUp.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import i from "../../images/signUp.jpg"
+import i from "../../images/signUp.jpg";
 
 function SignUp() {
-  const navigate = useNavigate()
-  const[username,setUser] = useState("");
+  const navigate = useNavigate();
+  const [username, setUser] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("student"); // Default role is "student"
@@ -40,11 +40,11 @@ function SignUp() {
 
     try {
       const response = await axios.post(
-        'https://gatecodelab.onrender.com/auth/signup',
-        {username, email, password, role}
+        "https://gatecodelab.onrender.com/auth/signup",
+        { username, email, password, role }
       );
       console.log(response.data); // handle the response as per your requirement
-      navigate('/allquestions')
+      navigate("/allquestions");
     } catch (error) {
       console.error(error);
     }
@@ -53,66 +53,84 @@ function SignUp() {
   return (
     <>
       <div className="page">
-        <div className="containe">
+        <div className="card_container">
           <h2>Sign Up</h2>
           <form>
-            <div className="sign">
-              <label htmlFor="usernamename">Username: </label>
-              <input
-                type="text"
-                id="usernamename"
-                name="usernamename"
-                onChange={handleChangeUser}
-                value={username}
-                required
-                
-              />
-              <br />
-              <br />
-              <label htmlFor="password" className="ip"> Password: </label>
-              <input type="password" id="password" name="password"  value={password} onChange={handleChangePassword} required />
-              <br />
-              <br />
-              <label htmlFor="email" className="email">
-                Email:{" "}
-              </label>
-              <input type="email" id="email" name="email" value={email} onChange={handleChangeEmail}  required />
-              <br />
-              <br />
-              <div className="roll">
-              <label htmlFor="role">Role: </label>
-              <input
-                type="radio"
-                id="student"
-                name="role"
-                defaultValue="student"
-                checked={role === "student"}
-                onChange={handleChangeRole}
-                required
-              />
-              <label htmlFor="student">Student</label>
-              <input
-                type="radio"
-                id="teacher"
-                name="role"
-                defaultValue="teacher"
-                checked={role === "teacher"}
-                onChange={handleChangeRole}
-                required
-              />
-              <label htmlFor="teacher"> Teacher</label>
-              <br />
-              <br />
+            <div className="signup_container">
+              <div>
+                <label htmlFor="username">Username: </label>
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  onChange={handleChangeUser}
+                  value={username}
+                  required
+                />
               </div>
+              <div>
+                <label htmlFor="password" className="ip">
+                  {" "}
+                  Password:
+                </label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  value={password}
+                  onChange={handleChangePassword}
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="email" className="email">
+                  Email:{" "}
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={email}
+                  onChange={handleChangeEmail}
+                  required
+                />
+              </div>
+              {/* <div className="roll">
+                <label htmlFor="role">Role: </label>
+                <input
+                  type="radio"
+                  id="student"
+                  name="role"
+                  defaultValue="student"
+                  checked={role === "student"}
+                  onChange={handleChangeRole}
+                  required
+                />
+                <label htmlFor="student">Student</label>
+                <input
+                  type="radio"
+                  id="teacher"
+                  name="role"
+                  defaultValue="teacher"
+                  checked={role === "teacher"}
+                  onChange={handleChangeRole}
+                  required
+                />
+                <label htmlFor="teacher"> Teacher</label>
+                <br />
+                <br />
+              </div> */}
             </div>
 
-            <span onClick={handleSignUp} className="btnElement" >Submit</span>
+            <span onClick={handleSignUp} className="btnElement">
+              Submit
+            </span>
             <p>
               Already have an account? <Link to="/auth/signin">Sign in</Link>
             </p>
           </form>
         </div>
-          <img src={i} className="i" alt="" />
+        <img src={i} className="i" alt="" />
       </div>
     </>
   );
