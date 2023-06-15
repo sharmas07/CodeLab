@@ -7,10 +7,10 @@ function Header() {
   return (
     <>
       <header>
-        <div class="logo">
-          <img src={g} class="logo" alt="" />
+        <div className="logo">
+          <img src={g} className="logo" alt="" />
         </div>
-        <div class="nav-links">
+        <div className="nav-links">
           <a href="#" className="home">
             Home
           </a>
@@ -24,7 +24,7 @@ function Header() {
         <div className="content">
           <div className="start">
           <h1>Conquer coding assignments with confidence.</h1>
-            <Link class="start-coding-button" to="/auth/signup">
+            <Link className="start-coding-button" to="/auth/signup">
               Start Coding
             </Link>
           </div>
