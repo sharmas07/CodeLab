@@ -6,7 +6,7 @@
 }
 
 .card_container {
-  width: 350px;
+  max-width: 20rem;
   padding: 40px;
   background: rgba(24, 20, 20, 0.987);
   box-sizing: border-box;
@@ -66,5 +66,8 @@
 @media screen and (max-width: 600px) {
   .page {
     flex-direction: column-reverse;
+  }
+  .i {
+    display: none;
   }
 }
