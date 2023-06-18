@@ -3,7 +3,9 @@ import "../Styles/SignUp.css"
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import i from "../../images/sign.jpg"
+import loader from "../../images/loader.gif"
 function SignIn() {
+  const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -16,6 +18,7 @@ function SignIn() {
   }
 
   const handleLogin = async (e) => {
+    setLoading(true)
     e.preventDefault();
     const data = {
       email,
@@ -30,6 +33,7 @@ function SignIn() {
     );
     console.log(response)
     navigate('/allquestions')
+    setLoading(false)
   };
 
   return (
@@ -67,7 +71,7 @@ function SignIn() {
               {" "}
               Don't have an account ? <Link to="/auth/signup">Sign Up</Link>
             </p>
-            <button onClick={handleLogin} className="btnElement"  >Login</button>
+            <button onClick={handleLogin} className={`btnElement_${loading?"loading":""}`}>{loading?<img style={{width:'50px'}} src={loader} alt="" />:"Login"}</button>
           </form>
         </div>
         <img src={i} className="i" alt="" />

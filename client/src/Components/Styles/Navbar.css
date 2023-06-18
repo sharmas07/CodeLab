@@ -40,6 +40,7 @@ header{
     justify-content: space-between;
     background-color: black;
     position: fixed;
+    z-index: 1;
     margin: 0;
     color: greenyellow;
     right: 0;

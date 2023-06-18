@@ -3,8 +3,10 @@ import "../Styles/SignUp.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import i from "../../images/signUp.jpg";
+import loader from "../../images/loader.gif"
 
 function SignUp() {
+  const [loading, setLoading] = useState(false)
   const navigate = useNavigate();
   const [username, setUser] = useState("");
   const [email, setEmail] = useState("");
@@ -28,6 +30,7 @@ function SignUp() {
   };
 
   const handleSignUp = async (e) => {
+    setLoading(true)
     e.preventDefault();
     const data = {
       username,
@@ -45,6 +48,7 @@ function SignUp() {
       );
       console.log(response.data); // handle the response as per your requirement
       navigate("/allquestions");
+      setLoading(false)
     } catch (error) {
       console.error(error);
     }
@@ -122,8 +126,9 @@ function SignUp() {
               </div> */}
             </div>
 
-            <span onClick={handleSignUp} className="btnElement">
-              Submit
+            <span onClick={handleSignUp} className={`btnElement_${loading?'loading':""}`}>
+              {loading  ? <img style={{width:'40px'}} src={loader} alt="" />:'Sign Up'}
+              
             </span>
             <p>
               Already have an account? <Link to="/auth/signin">Sign in</Link>

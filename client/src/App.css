@@ -42,8 +42,7 @@
   margin-left: 40px;
 }
 .b:hover{
-  background-color: aliceblue;
-  color: rgb(17, 16, 16);
+  cursor: pointer;
   box-shadow: 0 0 5px rgb(33, 107, 235),0 0 10px rgb(27, 81, 246),
   0 0 15px rgb(33, 107, 235),0 0 25px rgb(27, 81, 246);
 }

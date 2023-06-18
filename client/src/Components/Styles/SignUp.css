@@ -38,12 +38,12 @@
   margin-bottom: 20px;
 }
 
-.btnElement {
+.btnElement_ {
   display: block;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  width: 80px;
+  width: 100px;
   padding-top: 10px;
   padding-bottom: 10px;
   background: linear-gradient(45deg, transparent, #007bff);
@@ -52,6 +52,22 @@
   color: #fff;
   border-radius: 5px;
   border: none;
+}
+.btnElement_loading{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 100px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  background-color: #000;
+
 }
 
 .btnElement:hover {
