@@ -21,7 +21,7 @@ export const addQues = async (req, res) => {
 
 export const submitQues = async (req, res) => {
     try {
-        const { code } = req.body;
+        const { code, language, testcase } = req.body;
         // TODO: compilation check of the submitted code
         const judge_api = process.env.JUDGE_API
         console.log('line 27')
@@ -39,11 +39,10 @@ export const submitQues = async (req, res) => {
                 'X-RapidAPI-Host': 'judge0-ce.p.rapidapi.com'
             },
             data: {
-                // source_code: "#include <stdio.h>\n\nint main(void) {\n  char name[10];\n  scanf(\"%s\", name);\n  printf(\"hello, %s\n\", name);\n  return 0;\n}",
                 source_code: code,
-                language_id: 71,
+                language_id: `${language}`,
                 // stdin: "",
-                expected_output:"hello"
+                expected_output:testcase
               }
         };
         const response = await axios.request(options);

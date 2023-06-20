@@ -1,0 +1,9 @@
+.language-selector{
+    margin: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.language-selector>select{
+    padding: 0.5rem 1rem;
+}

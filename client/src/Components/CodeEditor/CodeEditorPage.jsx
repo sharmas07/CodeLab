@@ -1,12 +1,14 @@
-import QuestionsNav from "./QuestionsNav";
 import QuestionText from "./QuestionText";
 import OutputArea from "./OutputArea";
 import Editor from "@monaco-editor/react";
 import axios from "axios";
-import Button from "react-bootstrap/Button";
 import loader from "../../images/loader.gif";
+import '../Styles/CodeEditor.css'
 
 const CodeEditorPage = () => {
+  const language_ref = useRef();
+  const [language, setLanguage] = useState(71)
+  const [status, setStatus] = useState(" ");
   const [output, setOutput] = useState("");
   const [stderr, setStderr] = useState("");
   const [status_id, setStatusId] = useState(null);
@@ -14,17 +16,22 @@ const CodeEditorPage = () => {
   const [code, setCode] = useState("");
   const editorRef = useRef(null);
   const submitCode = async () => {
+    setLanguage(language_ref.current.value)
+    setStatus("")
     setCompiling(true);
     const response = await axios.post(
       "https://gatecodelab.onrender.com/question/submitques",
-      { code }
+      { code, language, testcase }
     );
     setCompiling(false);
     if (response.data.stderr) {
       setStderr(response.data.stderr);
       setOutput("");
+      setStatusId(response.data.status.id)
     } else {
       setOutput(response.data.stdout);
+      setStatus(response.data.status.description)
+      setStatusId(response.data.status.id)
     }
 
     console.log(output);
@@ -34,15 +41,20 @@ const CodeEditorPage = () => {
   }
 
   function showValue() {
-    // this is where you can get source code from editor
-
     setCode(editorRef.current.getValue());
   }
 
   const { name, testcase } = useParams();
   return (
     <>
-      <QuestionText name={name} />
+      <QuestionText testcase={testcase} name={name} />
+      <div className="language-selector">
+        <select ref={language_ref} onChange={(e)=>{setLanguage(e.target.value)}} name="sharmas" id="">
+          <option value="71">python</option>
+          <option value="4">C</option>
+          <option value="21">Java</option>
+        </select>
+      </div>
       <Editor
         ref={editorRef}
         onMount={handleEditorDidMount}
@@ -52,7 +64,14 @@ const CodeEditorPage = () => {
         theme="vs-dark"
         defaultLanguage="python"
       />
-      <p style={{ margin: "1rem" }}>testcase : {testcase}</p>
+     <h4 style={
+      {
+        fontWeight:'bold',
+        height:"2rem",
+        margin:"1rem",
+        color:`${status_id===4?'red':'green'}`
+      }
+     } className="status_text">{status}</h4>
       <OutputArea
         status_id={status_id}
         output={output}
