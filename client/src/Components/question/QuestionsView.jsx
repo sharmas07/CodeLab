@@ -5,58 +5,58 @@ import axios from "axios";
 const QuestionsView = () => {
   const questions = [
     {
-        no:'1',
+      serialNo: "1",
       question:
         "Write a Python function to find the maximum number in a given list.",
-      testcase: "3 9 1 6 2",
+      testcase: "8",
     },
     {
-        no:'2',
+      no: "2",
       question:
         "Write a Python program to check if a string is a palindrome or not.",
       testcase: "racecar",
     },
     {
-        no:'3',
+      no: "3",
       question:
         "Write a Python function to calculate the factorial of a number.",
-      testcase:  "5",
+      testcase: "5",
     },
     {
-        no:'4',
+      no: "4",
       question:
         "Write a Python program to count the number of vowels in a given string.",
       testcase: "Hello World",
     },
     {
-        no:'5',
+      no: "5",
       question: "Write a Python function to check if a number is prime.",
       testcase: "17",
     },
     {
-        no:'6',
+      no: "6",
       question:
         "Write a Python program to find the sum of all even numbers in a given list.",
       testcase: "1 2 3 4 5 6",
     },
     {
-        no:'7',
+      no: "7",
       question: "Write a Python function to reverse a given string.",
       testcase: "'Python'",
     },
     {
-        no:'8',
+      no: "8",
       question:
         "Write a Python program to remove duplicate elements from a given list.",
       testcase: "1 2 2 3 4 4 5",
     },
     {
-        no:'9',
+      no: "9",
       question: "Write a Python function to check if two strings are anagrams.",
       testcase: "'listen', 'silent' ",
     },
     {
-        no:'10',
+      no: "10",
       question:
         "Write a Python program to find the average of numbers in a given list.",
       testcase: "1, 2, 3, 4, 5",
@@ -73,39 +73,9 @@ const QuestionsView = () => {
           </tr>
         </thead>
         <tbody>
-            
-         
-         { questions.map((question)=>{
-            return <Question ques={question}/>;
-         })
-            
-         }
-          
-          {/* <tr>
-                        <td><b>2</b></td>
-                        <td>Find a subset of a given set whose element sum is equal to a given number
-                        </td>
-                        <td>Design Analysis of Programs
-                            <button> Open Ques </button></td>
-                    </tr>
-                    <tr>
-                        <td><b>3</b></td>
-                        <td>Knapsack problem using greedy method</td>
-                        <td>Design Analysis of Programs
-                            <button>Open Ques</button></td>
-                    </tr>
-                    <tr>
-                        <td><b>4</b></td>
-                        <td>Knapsack problem using greedy method</td>
-                        <td>Design Analysis of Programs
-                            <button>Open Ques</button></td>
-                    </tr>
-                    <tr>
-                        <td><b>5</b></td>
-                        <td>Stack operations</td>
-                        <td>Design Analysis of Programs
-                            <button>Open Ques</button></td>
-                    </tr> */}
+          {questions.map((question) => {
+            return <Question ques={question} />;
+          })}
         </tbody>
       </table>
     </>

@@ -1,28 +1,38 @@
-import Question from "../models/questionModel.js";
 import axios from "axios";
+import Question from "../models/questionModel.js";
 
 export const addQues = async (req, res) => {
     try {
-        const { serialNo, nameOfExperiment, questionDescription, testCases } = req.body;
-        const question = {
+        const { serialNo, question, questionDescription, submit_testcase } = req.body;
+        const newQuestion = {
             serialNo,
-            nameOfExperiment,
+            question,
             questionDescription,
-            testCases
+            submit_testcase
         }
-        const newQues = new Question(question);
+        const newQues = new Question(newQuestion)
         const savedQues = await newQues.save();
         res.status(201).json(savedQues);
     }
     catch (error) {
+        console.log(error)
         res.send('error while adding question')
     }
 }
 
 export const submitQues = async (req, res) => {
     try {
-        const { code, language, testcase } = req.body;
-        // TODO: compilation check of the submitted code
+        let { code, language, testcase, isSubmit, serialNo } = req.body;
+        console.log(isSubmit)
+
+        if(isSubmit){
+            console.log('inside if')
+            // TODO: PULL the test case from the DB by question id
+            let db_testcase = await Question.findOne({serialNo:"PY1"})
+            testcase = db_testcase.submit_testcase
+        }
+        console.log("after if")
+        // compilation check of the submitted code
         const judge_api = process.env.JUDGE_API
         console.log('line 27')
         const options = {
@@ -41,7 +51,6 @@ export const submitQues = async (req, res) => {
             data: {
                 source_code: code,
                 language_id: `${language}`,
-                // stdin: "",
                 expected_output:testcase
               }
         };

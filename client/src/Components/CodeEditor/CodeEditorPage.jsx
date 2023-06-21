@@ -4,6 +4,7 @@ import Editor from "@monaco-editor/react";
 import axios from "axios";
 import loader from "../../images/loader.gif";
 import '../Styles/CodeEditor.css'
+import { base_url } from "../../api";
 
 const CodeEditorPage = () => {
   const language_ref = useRef();
@@ -16,12 +17,35 @@ const CodeEditorPage = () => {
   const [code, setCode] = useState("");
   const editorRef = useRef(null);
   const submitCode = async () => {
+    console.log('submitting code')
     setLanguage(language_ref.current.value)
     setStatus("")
     setCompiling(true);
     const response = await axios.post(
-      "https://gatecodelab.onrender.com/question/submitques",
-      { code, language, testcase }
+      `${base_url}/question/submitques`,
+      { code, language, testcase , isSubmit:true}
+    );
+    setCompiling(false);
+    if (response.data.stderr) {
+      setStderr(response.data.stderr);
+      setOutput("");
+      setStatusId(response.data.status.id)
+    } else {
+      setOutput(response.data.stdout);
+      setStatus(response.data.status.description)
+      setStatusId(response.data.status.id)
+    }
+
+    console.log(output);
+  };
+  const runCode = async () => {
+    console.log('running code')
+    setLanguage(language_ref.current.value)
+    setStatus("")
+    setCompiling(true);
+    const response = await axios.post(
+      `${base_url}/question/submitques`,
+      { code, language, testcase , isSubmit:false, serialNo:"PY1"}
     );
     setCompiling(false);
     if (response.data.stderr) {
@@ -81,7 +105,7 @@ const CodeEditorPage = () => {
 
       <div className="foot">
         <div className="foot-container">
-          <span variant="outline-warning" className="b">
+          <span variant="outline-warning" onClick={runCode} className="b">
             Run
           </span>{" "}
           <span

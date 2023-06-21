@@ -1,10 +1,10 @@
 import mongoose from "mongoose";
 
 const questionSchema = new mongoose.Schema({
-    serialNo:Number,
-    nameOfExperiment:String,
+    serialNo:String,
+    question:String,
     questionDescription:String,
-    testCases:Array
+    submit_testcase: String
 })
 
 const Question = mongoose.model("Question", questionSchema);

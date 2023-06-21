@@ -19,7 +19,6 @@ function Question({ ques }) {
                 Open Ques{" "}
               </button>
             </td>
-            //{" "}
           </tr>
 
     </>
