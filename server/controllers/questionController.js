@@ -20,6 +20,19 @@ export const addQues = async (req, res) => {
     }
 }
 
+
+export const getQuestionBySerialNo = async(req, res)=>{
+    const query = req.params.serialNo
+    console.log(query)
+    try {
+        const question = await Question.findOne({serialNo:query})
+        res.status(200).json(question);
+    } catch (error) {
+        res.status(500).send(error)
+    }
+}
+
+
 export const submitQues = async (req, res) => {
     try {
         let { code, language, testcase, isSubmit, serialNo } = req.body;
@@ -28,7 +41,8 @@ export const submitQues = async (req, res) => {
         if(isSubmit){
             console.log('inside if')
             // TODO: PULL the test case from the DB by question id
-            let db_testcase = await Question.findOne({serialNo:"PY1"})
+            let db_testcase = await Question.findOne({serialNo:serialNo})
+            console.log(db_testcase)
             testcase = db_testcase.submit_testcase
         }
         console.log("after if")

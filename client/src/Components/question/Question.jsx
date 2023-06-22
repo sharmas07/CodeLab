@@ -9,14 +9,12 @@ function Question({ ques }) {
       
           <tr>
             <td>
-              <b>{ques.no}</b>
+              <b>{ques.serialNo}</b>
             </td>
-            <td>{ques.question}</td>
+            <td>{ques.questionDescription}</td>
             <td>
-              Python
-              <button className="qBtn" onClick={() => navigate(`/code_editor/${ques.question}/${ques.testcase}`)}>
-                {""}
-                Open Ques{" "}
+              <button className="qBtn" onClick={() => navigate(`/code_editor/${ques.serialNo}`)}>
+                solve
               </button>
             </td>
           </tr>
