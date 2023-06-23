@@ -6,7 +6,7 @@ import axios from "axios";
 import loader from "../../images/loader.gif";
 import "../Styles/CodeEditor.css";
 import { base_url } from "../../api";
-
+import { questionsData } from "../question/questionsData";
 
 const CodeEditorPage = () => {
   const { serialNo } = useParams();
@@ -23,11 +23,13 @@ const CodeEditorPage = () => {
   const [code, setCode] = useState("");
   const editorRef = useRef(null);
   const submitCode = async () => {
+    let userId = localStorage.getItem('userId')
     console.log("submitting code");
     setLanguage(language_ref.current.value);
     setStatus("");
     setCompiling(true);
     const response = await axios.post(`${base_url}/question/submitques`, {
+      userId,
       code,
       language,
       testcase:question.testcase,
@@ -84,18 +86,13 @@ const CodeEditorPage = () => {
 
   //Dummy question
   useEffect(() => {
+    const question = questionsData.find(item => item.serialNo === serialNo);
+    setQuestion(question)
+
     // currently fetching the question from the client hardcoded data may use this endpoint in future
     // const fetchData =async ()=>{
     //   const {data} = await axios.get(`${base_url}/question/getQuestion/PY1`)
     // }
-    const question = {
-      serialNo: "J1",
-      questionName: "hello world",
-      questionDescription:
-      "Write a program to print hello world in Java language",
-      testcase: "hello world",
-    };
-    setQuestion(question)
     // fetchData();
   }, [])
   

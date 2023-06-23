@@ -2,10 +2,10 @@
 
 .qBtn{
     font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;    ;
-    font-weight: 900;
+    font-weight: 700;
     font-size: 1rem;
-    border-radius: 5px;
-    background-color: #007bff;
+    border:none;
+    border-radius: 8px;
     padding: 10px;
 }   
 .qBtn:hover{
