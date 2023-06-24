@@ -25,7 +25,7 @@ export const signup = async (req, res) => {
         }
         const user = await newUser.save()
         const userQuestionStatus = await QuestionStatus.create({userId:user.id})
-        res.status(200).json({user, userQuestionStatus})
+        res.status(200).json(user)
     } catch (error) {
         res.status(500).json({ message: error.message })
     }
