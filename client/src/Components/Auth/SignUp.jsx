@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import i from "../../images/signUp.jpg";
 import loader from "../../images/loader.gif"
+import { base_url } from "../../api";
 
 function SignUp() {
   const [loading, setLoading] = useState(false)
@@ -43,10 +44,11 @@ function SignUp() {
 
     try {
       const response = await axios.post(
-        "https://gatecodelab.onrender.com/auth/signup",
+        `${base_url}/auth/signup`,
         { username, email, password, role }
       );
       console.log(response.data); // handle the response as per your requirement
+      localStorage.setItem('userId',response.data._id)
       navigate("/allquestions");
       setLoading(false)
     } catch (error) {

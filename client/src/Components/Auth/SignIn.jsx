@@ -25,13 +25,13 @@ function SignIn() {
       password,
     };
     console.log("handleLogin");
-    console.log(data);
 
     const response = await axios.post(
       "https://gatecodelab.onrender.com/auth/signin",
       {email, password}
     );
-    console.log(response)
+    localStorage.setItem('userId',response.data._id)
+    console.log(response.data._id)
     navigate('/allquestions')
     setLoading(false)
   };

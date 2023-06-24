@@ -28,7 +28,7 @@ function App() {
         <Route path="/auth/signup" element={<SignUp />} />
         <Route path="/allquestions" element={<QuestionsView />} />
         <Route
-          path="/code_editor/:name/:testcase"
+          path="/code_editor/:serialNo"
           element={<CodeEditorPage />}
         />
       </Routes>

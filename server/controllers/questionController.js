@@ -1,30 +1,51 @@
-import Question from "../models/questionModel.js";
 import axios from "axios";
+import Question from "../models/questionModel.js";
+import QuestionStatus from "../models/questionStatusModel.js";
 
 export const addQues = async (req, res) => {
     try {
-        const { serialNo, nameOfExperiment, questionDescription, testCases } = req.body;
-        const question = {
+        const { serialNo, question, questionDescription, submit_testcase } = req.body;
+        const newQuestion = {
             serialNo,
-            nameOfExperiment,
+            question,
             questionDescription,
-            testCases
+            submit_testcase
         }
-        const newQues = new Question(question);
+        const newQues = new Question(newQuestion)
         const savedQues = await newQues.save();
         res.status(201).json(savedQues);
     }
     catch (error) {
+        console.log(error)
         res.send('error while adding question')
     }
 }
 
+
+export const getQuestionBySerialNo = async(req, res)=>{
+    const query = req.params.serialNo
+    console.log(query)
+    try {
+        const question = await Question.findOne({serialNo:query})
+        res.status(200).json(question);
+    } catch (error) {
+        res.status(500).send(error)
+    }
+}
+
+
 export const submitQues = async (req, res) => {
     try {
-        const { code, language, testcase } = req.body;
-        // TODO: compilation check of the submitted code
+        let {userId, code, language, testcase, isSubmit, serialNo } = req.body;
+
+        if(isSubmit){
+            // TODO: PULL the test case from the DB by question id
+            let db_testcase = await Question.findOne({serialNo:serialNo})
+            console.log(db_testcase)
+            testcase = db_testcase.submit_testcase
+        }
+        // compilation check of the submitted code
         const judge_api = process.env.JUDGE_API
-        console.log('line 27')
         const options = {
             method: 'POST',
             url: 'https://judge0-ce.p.rapidapi.com/submissions',
@@ -41,15 +62,14 @@ export const submitQues = async (req, res) => {
             data: {
                 source_code: code,
                 language_id: `${language}`,
-                // stdin: "",
                 expected_output:testcase
               }
         };
         const response = await axios.request(options);
         console.log('submit got hit')
-        console.log(response.data);
+        // console.log(response.data);
         const {token} = response.data
-        const output =await getsubmission(token)
+        const output =await getsubmission(token, userId, serialNo)
         res.json(output)
         
         // success if code doesnt have any errors
@@ -60,7 +80,19 @@ export const submitQues = async (req, res) => {
 }
 
 
-const getsubmission = async(token)=>{
+export const getQuestionStatusOfUser = async (req, res)=>{
+    try {
+        console.log('getQuestionStatusOfUser got hit')
+        const {userId} = req.body;
+        const UserQuestionsStatus = await QuestionStatus.findOne({userId})
+        res.status(200).json(UserQuestionsStatus);
+    } catch (error) {
+        res.json(error)
+    }
+}
+
+
+const getsubmission = async(token, userId, serialNo)=>{
     try {
         const options = {
             method: 'GET',
@@ -78,6 +110,19 @@ const getsubmission = async(token)=>{
           try {
               const response = await axios.request(options);
               console.log(response.data);
+            //   const post = await postModel.findById(id)
+            //   if(!post.likes.includes(userId)){
+            //       await post.updateOne({$push: {likes: userId}});
+            //       res.status(200).json("post liked")
+            //   }
+              if (response.data.status.id === 3) {
+                const QuesUserStatus = await QuestionStatus.findOne({userId:userId})
+                console.log(QuesUserStatus)
+                if(!QuesUserStatus.serialNo.includes(serialNo)){
+                    await QuesUserStatus.updateOne({$push: {serialNo:serialNo}})
+                    console.log(`${userId} solved ${serialNo} question`)
+                }
+              }
               return response.data;
           } catch (error) {
               console.error(error);

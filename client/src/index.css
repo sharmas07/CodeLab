@@ -4,3 +4,6 @@
     font-family: 'Inter', sans-serif;
     font-family: 'Nanum Gothic Coding', monospace;
 }
+::-webkit-scrollbar {
+    width: 0.5em;
+  }

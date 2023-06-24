@@ -1,13 +1,20 @@
+import { useEffect } from "react";
 import QuestionText from "./QuestionText";
 import OutputArea from "./OutputArea";
 import Editor from "@monaco-editor/react";
 import axios from "axios";
 import loader from "../../images/loader.gif";
-import '../Styles/CodeEditor.css'
+import "../Styles/CodeEditor.css";
+import { base_url } from "../../api";
+import { questionsData } from "../question/questionsData";
 
 const CodeEditorPage = () => {
+  const { serialNo } = useParams();
+  // TODO: get question from the DB using the serialNo and pass it to question text
+
   const language_ref = useRef();
-  const [language, setLanguage] = useState(71)
+  const [language, setLanguage] = useState(71);
+  const[question, setQuestion] = useState('')
   const [status, setStatus] = useState(" ");
   const [output, setOutput] = useState("");
   const [stderr, setStderr] = useState("");
@@ -16,22 +23,53 @@ const CodeEditorPage = () => {
   const [code, setCode] = useState("");
   const editorRef = useRef(null);
   const submitCode = async () => {
-    setLanguage(language_ref.current.value)
-    setStatus("")
+    let userId = localStorage.getItem('userId')
+    console.log("submitting code");
+    setLanguage(language_ref.current.value);
+    setStatus("");
     setCompiling(true);
-    const response = await axios.post(
-      "https://gatecodelab.onrender.com/question/submitques",
-      { code, language, testcase }
-    );
+    const response = await axios.post(`${base_url}/question/submitques`, {
+      userId,
+      code,
+      language,
+      testcase:question.testcase,
+      isSubmit: true,
+      serialNo
+    });
     setCompiling(false);
     if (response.data.stderr) {
       setStderr(response.data.stderr);
       setOutput("");
-      setStatusId(response.data.status.id)
+      setStatusId(response.data.status.id);
     } else {
       setOutput(response.data.stdout);
-      setStatus(response.data.status.description)
-      setStatusId(response.data.status.id)
+      setStatus(response.data.status.description);
+      setStatusId(response.data.status.id);
+    }
+
+    console.log(output);
+  };
+  const runCode = async () => {
+    console.log("running code");
+    setLanguage(language_ref.current.value);
+    setStatus("");
+    setCompiling(true);
+    const response = await axios.post(`${base_url}/question/submitques`, {
+      code,
+      language,
+      testcase:question.testcase,
+      isSubmit: false,
+      serialNo: "PY1",
+    });
+    setCompiling(false);
+    if (response.data.stderr) {
+      setStderr(response.data.stderr);
+      setOutput("");
+      setStatusId(response.data.status.id);
+    } else {
+      setOutput(response.data.stdout);
+      setStatus(response.data.status.description);
+      setStatusId(response.data.status.id);
     }
 
     console.log(output);
@@ -44,12 +82,33 @@ const CodeEditorPage = () => {
     setCode(editorRef.current.getValue());
   }
 
-  const { name, testcase } = useParams();
+
+
+  //Dummy question
+  useEffect(() => {
+    const question = questionsData.find(item => item.serialNo === serialNo);
+    setQuestion(question)
+
+    // currently fetching the question from the client hardcoded data may use this endpoint in future
+    // const fetchData =async ()=>{
+    //   const {data} = await axios.get(`${base_url}/question/getQuestion/PY1`)
+    // }
+    // fetchData();
+  }, [])
+  
+  
   return (
     <>
-      <QuestionText testcase={testcase} name={name} />
+      <QuestionText question={question} />
       <div className="language-selector">
-        <select ref={language_ref} onChange={(e)=>{setLanguage(e.target.value)}} name="sharmas" id="">
+        <select
+          ref={language_ref}
+          onChange={(e) => {
+            setLanguage(e.target.value);
+          }}
+          name="sharmas"
+          id=""
+        >
           <option value="71">python</option>
           <option value="4">C</option>
           <option value="21">Java</option>
@@ -64,14 +123,17 @@ const CodeEditorPage = () => {
         theme="vs-dark"
         defaultLanguage="python"
       />
-     <h4 style={
-      {
-        fontWeight:'bold',
-        height:"2rem",
-        margin:"1rem",
-        color:`${status_id===4?'red':'green'}`
-      }
-     } className="status_text">{status}</h4>
+      <h4
+        style={{
+          fontWeight: "bold",
+          height: "2rem",
+          margin: "1rem",
+          color: `${status_id === 4 ? "red" : "green"}`,
+        }}
+        className="status_text"
+      >
+        {status}
+      </h4>
       <OutputArea
         status_id={status_id}
         output={output}
@@ -81,14 +143,16 @@ const CodeEditorPage = () => {
 
       <div className="foot">
         <div className="foot-container">
-          <span variant="outline-warning" className="b">
+          <span variant="outline-warning" onClick={runCode} className="b">
             Run
           </span>{" "}
-          <span
-            variant="outline-success"
-            className={`b`}
-            onClick={submitCode}
-          >{compiling?<img style={{width:'40px'}} src={loader} alt="" />:"Submit"}</span>{" "}
+          <span variant="outline-success" className={`b`} onClick={submitCode}>
+            {compiling ? (
+              <img style={{ width: "40px" }} src={loader} alt="" />
+            ) : (
+              "Submit"
+            )}
+          </span>{" "}
         </div>
       </div>
     </>
