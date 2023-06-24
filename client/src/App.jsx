@@ -8,14 +8,18 @@ import QuestionsView from "../src/Components/question/QuestionsView";
 import CodeEditorPage from "../src/Components/CodeEditor/CodeEditorPage";
 import Navbar from "./Components/common/Navbar";
 import './Components/Styles/Navbar.css'
+import Footer from "./Components/common/Footer";
+
 function App() {
   const[showSidebar, setShowSidebar] = useState(false)
   return (
     <div>
       <div className={`sidebar-${showSidebar?'show':'hide'}`}>
-        <div onClick={()=>setShowSidebar(!showSidebar)}>close</div>
-        <div>nav links</div>
-        <div></div>
+        <div className="SidebarObject">
+        <div onClick={()=>setShowSidebar(!showSidebar)} > <span className="close">close</span> </div>
+        <div><span className="Home">Home</span></div>
+        <div><span className="Home">Ques</span></div>
+        </div>
     </div>
       <Navbar showSidebar={showSidebar} setShowSidebar={setShowSidebar}/>
       <Routes>
@@ -28,8 +32,7 @@ function App() {
           element={<CodeEditorPage />}
         />
       </Routes>
-
-      {/* <Footer /> */}
+    <Footer/>
     </div>
   );
 }

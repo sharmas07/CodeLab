@@ -9,11 +9,11 @@
 
   }
   
-  .footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+  .footer-content >p {
+    text-align: center;
   }
+  
   
   .footer p {
     margin: 0;
@@ -42,7 +42,7 @@
   @media screen and (max-width:600px) { 
   
   .footer{
-    font-size: 2rem;
+    font-size: 1rem;
     padding: 10px;
   }
   
