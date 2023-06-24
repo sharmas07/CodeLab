@@ -42,6 +42,42 @@ export const questionsData = [
     questionDescription: "Write a program to check if a string is a palindrome in Java",
     testcase: "madam"
   },
+  {
+    serialNo: "J1",
+    questionName: "Hello world",
+    questionDescription: "Write a program to print hello world in Java language",
+    testcase: "Hello world"
+  },
+  {
+    serialNo: "J2",
+    questionName: "Palindrome",
+    questionDescription: "Write a program to check if a string is a palindrome in Java",
+    testcase: "madam"
+  },
+  {
+    serialNo: "J1",
+    questionName: "Hello world",
+    questionDescription: "Write a program to print hello world in Java language",
+    testcase: "Hello world"
+  },
+  {
+    serialNo: "J2",
+    questionName: "Palindrome",
+    questionDescription: "Write a program to check if a string is a palindrome in Java",
+    testcase: "madam"
+  },
+  {
+    serialNo: "J1",
+    questionName: "Hello world",
+    questionDescription: "Write a program to print hello world in Java language",
+    testcase: "Hello world"
+  },
+  {
+    serialNo: "J2",
+    questionName: "Palindrome",
+    questionDescription: "Write a program to check if a string is a palindrome in Java",
+    testcase: "madam"
+  },
   
   // ... add more Java questions
 ]
