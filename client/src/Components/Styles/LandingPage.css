@@ -20,7 +20,7 @@
 .home {
   padding: 10px;
   font-size: 1rem;
-  background-color: #007bff;
+  background:linear-gradient(45deg, transparent, #eb36e2);;
   color: #fff;
   text-decoration: none;
   border: none;
@@ -31,8 +31,8 @@
 }
 .Login {
   padding: 10px;
-  font-size: 18px;
-  background-color: #007bff;
+  font-size: 1rem;
+  background:linear-gradient(45deg, transparent, #ee31c8);
   color: #fff;
   text-decoration: none;
   border: none;
@@ -41,15 +41,15 @@
 
 .home:hover {
   background-color: #333;
-  box-shadow: 0 0 5px rgb(128, 162, 229), 0 0 10px rgb(127, 127, 238),
-    0 0 25px rgb(123, 123, 220), 0 0 50px rgb(109, 156, 252);
+  box-shadow: 0 0 5px rgb(239, 138, 239), 0 0 10px rgb(209, 111, 229),
+    0 0 25px rgb(226, 104, 237), 0 0 50px rgb(225, 116, 214);
   color: white;
 }
 
 .Login:hover {
   background-color: #333;
-  box-shadow: 0 0 5px rgb(128, 162, 229), 0 0 10px rgb(127, 127, 238),
-    0 0 25px rgb(123, 123, 220), 0 0 50px rgb(109, 156, 252);
+  box-shadow: 0 0 5px rgb(209, 107, 227), 0 0 10px rgb(191, 88, 205),
+    0 0 25px rgb(199, 123, 220), 0 0 50px rgb(157, 75, 180);
   color: white;
 }
 
