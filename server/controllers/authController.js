@@ -1,5 +1,6 @@
 import QuestionStatus from "../models/questionStatusModel.js";
 import User from "../models/userModel.js";
+import jwt from 'jsonwebtoken'
 
 // user signup controller
 export const login = async (req, res) => {
@@ -9,7 +10,13 @@ export const login = async (req, res) => {
         return res.status(400).json("user not found");
     }
   
-    res.status(200).json(user)
+    const userData = {
+        user: {
+            username: user.username, id: user._id
+        }
+    }
+    const auth_token = jwt.sign(userData, process.env.JWT_SECRET)
+    res.status(200).json({ user, auth_token })
 
 }
 
@@ -25,7 +32,13 @@ export const signup = async (req, res) => {
         }
         const user = await newUser.save()
         const userQuestionStatus = await QuestionStatus.create({userId:user.id})
-        res.status(200).json(user)
+        const userData = {
+            user: {
+                username: user.username, id: user._id
+            }
+        }
+        const auth_token = jwt.sign(userData, process.env.JWT_SECRET)
+        res.status(200).json({ user, auth_token })
     } catch (error) {
         res.status(500).json({ message: error.message })
     }

@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import i from "../../images/sign.jpg"
 import loader from "../../images/loader.gif"
+import { base_url } from "../../api";
 function SignIn() {
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
@@ -27,7 +28,7 @@ function SignIn() {
     console.log("handleLogin");
 
     const response = await axios.post(
-      "https://gatecodelab.onrender.com/auth/signin",
+      `${base_url}/auth/signin`,
       {email, password}
     );
     localStorage.setItem('userId',response.data._id)

@@ -19,7 +19,7 @@ app.use('/auth',authRoutes);
 app.use('/question',questionRoutes);
 
 app.get('/',(req, res)=>{
-    res.send('hello from SkillShow entry point')
+    res.send('hello from gatescodelab entry point')
 })
 
 

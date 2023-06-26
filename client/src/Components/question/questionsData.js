@@ -4,13 +4,17 @@ export const questionsData = [
     serialNo: "PY1",
     questionName: "Hello world",
     questionDescription: "Write a program to print hello world in Python",
-    testcase: "Hello world"
+    run_testcase: "Hello world",
+    submit_testcase: "Hello world",
+    input:""
   },
   {
     serialNo: "PY2",
     questionName: "Factorial",
     questionDescription: "Write a program to calculate the factorial of a number in Python",
-    testcase: "120 for stdinput 5"
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
   },
   // ... add more Python questions
 
@@ -19,13 +23,17 @@ export const questionsData = [
     serialNo: "C1",
     questionName: "Hello world",
     questionDescription: "Write a program to print hello world in C language",
-    testcase: "Hello world"
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
   },
   {
     serialNo: "C2",
     questionName: "Array Sum",
     questionDescription: "Write a program to calculate the sum of elements in an array in C",
-    testcase: "1 2 3 4 5"
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
   },
   // ... add more C questions
 
@@ -34,14 +42,19 @@ export const questionsData = [
     serialNo: "J1",
     questionName: "Hello world",
     questionDescription: "Write a program to print hello world in Java language",
-    testcase: "Hello world"
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
   },
   {
     serialNo: "J2",
     questionName: "Palindrome",
     questionDescription: "Write a program to check if a string is a palindrome in Java",
-    testcase: "madam"
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
   },
   
   // ... add more Java questions
+  // and other subjects questions too
 ]
