@@ -37,7 +37,7 @@ export const getQuestionBySerialNo = async(req, res)=>{
 export const submitQues = async (req, res) => {
     try {
         let {userId, code, language, testcase, isSubmit, serialNo } = req.body;
-
+        console.log('submit question got hit')
         if(isSubmit){
             // TODO: PULL the test case from the DB by question id
             let db_testcase = await Question.findOne({serialNo:serialNo})
@@ -69,7 +69,7 @@ export const submitQues = async (req, res) => {
         console.log('submit got hit')
         // console.log(response.data);
         const {token} = response.data
-        const output =await getsubmission(token, userId, serialNo)
+        const output =await getsubmission(token, userId, serialNo, isSubmit)
         res.json(output)
         
         // success if code doesnt have any errors
@@ -92,7 +92,7 @@ export const getQuestionStatusOfUser = async (req, res)=>{
 }
 
 
-const getsubmission = async(token, userId, serialNo)=>{
+const getsubmission = async(token, userId, serialNo, isSubmit)=>{
     try {
         const options = {
             method: 'GET',
@@ -115,7 +115,7 @@ const getsubmission = async(token, userId, serialNo)=>{
             //       await post.updateOne({$push: {likes: userId}});
             //       res.status(200).json("post liked")
             //   }
-              if (response.data.status.id === 3) {
+              if (response.data.status.id === 3 && isSubmit) {
                 const QuesUserStatus = await QuestionStatus.findOne({userId:userId})
                 console.log(QuesUserStatus)
                 if(!QuesUserStatus.serialNo.includes(serialNo)){

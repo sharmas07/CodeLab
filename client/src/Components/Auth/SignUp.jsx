@@ -6,7 +6,7 @@ import i from "../../images/signUp.jpg";
 import loader from "../../images/loader.gif"
 import { base_url } from "../../api";
 
-function SignUp() {
+function SignUp({setUserId}) {
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate();
   const [username, setUser] = useState("");
@@ -48,7 +48,9 @@ function SignUp() {
         { username, email, password, role }
       );
       console.log(response.data); // handle the response as per your requirement
-      localStorage.setItem('userId',response.data._id)
+      localStorage.setItem('userId',response.data.user._id)
+      localStorage.setItem('auth-token',response.data.auth_token)
+      // setUserId(response.data.user._id)
       navigate("/allquestions");
       setLoading(false)
     } catch (error) {

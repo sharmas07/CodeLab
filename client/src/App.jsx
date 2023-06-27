@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import "./App.css";
 import SignIn from "../src/Components/Auth/SignIn";
 import SignUp from "../src/Components/Auth/SignUp";
@@ -11,6 +11,7 @@ import './Components/Styles/Navbar.css'
 import Footer from "./Components/common/Footer";
 
 function App() {
+
   const[showSidebar, setShowSidebar] = useState(false)
   return (
     <div>

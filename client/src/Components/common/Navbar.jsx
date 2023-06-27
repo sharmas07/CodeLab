@@ -1,11 +1,21 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import logo from '../../images/logo.png'
 import { Link } from 'react-router-dom'
 import '../Styles/Navbar.css'
 import hamburgerBtn from '../../images/hamburger-btn.png'
 
 const Navbar = ({showSidebar ,setShowSidebar}) => {
-    
+  const [userId, setUserId] = useState('');
+  useEffect(() => {
+    setUserId(localStorage.getItem('userId'))
+  }, [])
+  
+    const handleLogout = ()=>{
+      if(userId){
+        localStorage.clear();
+        setUserId('')
+      }
+    }
   return (
     <>
     <div className="header">
@@ -17,8 +27,8 @@ const Navbar = ({showSidebar ,setShowSidebar}) => {
       <a href="#" className="home">
         Home
       </a>
-      <Link to="/auth/signup" className="Login">
-        Login
+      <Link onClick={handleLogout} to="/auth/signup" className="Login">
+        {userId?"Logout":"Login"}
       </Link>
     </div>
     <img className='hamburger__btn' onClick={()=>setShowSidebar(!showSidebar)} src={hamburgerBtn} alt="" />

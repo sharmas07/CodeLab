@@ -5,15 +5,22 @@ import { useState, useEffect } from "react";
 import axios from 'axios'
 import { questionsData } from "./questionsData";
 import { base_url } from "../../api";
+import { useNavigate } from "react-router-dom";
 const QuestionsView = () => {
+  
   const [selectedLanguage, setSelectedLanguage] = useState('P'); // Default selected language is 'P' (Python)
   const filteredData = questionsData.filter(item => item.serialNo.startsWith(selectedLanguage));
   const [quesStatus, setQuesStatus] = useState(null)
   //get user questions status wheather solved or not
+  const navigate = useNavigate()
   useEffect(() => {
+    
+    if(!localStorage.getItem('auth-token')){
+      navigate('/auth/signin')
+    }
     const fetchData = async()=>{
       const {data} = await axios.post(`${base_url}/question/getQuestionStatusOfUser`, {userId:localStorage.getItem("userId")})
-      console.log(data)
+      // console.log(data)
       setQuesStatus(data);
     }
     fetchData();

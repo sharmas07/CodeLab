@@ -1,6 +1,9 @@
 import QuestionStatus from "../models/questionStatusModel.js";
 import User from "../models/userModel.js";
 import jwt from 'jsonwebtoken'
+import dotenv from 'dotenv'
+import bcrypt from 'bcrypt'
+dotenv.config();
 
 // user signup controller
 export const login = async (req, res) => {
@@ -9,7 +12,7 @@ export const login = async (req, res) => {
     if (!user) {
         return res.status(400).json("user not found");
     }
-  
+    
     const userData = {
         user: {
             username: user.username, id: user._id
@@ -23,8 +26,16 @@ export const login = async (req, res) => {
 // new user signup
 export const signup = async (req, res) => {
     console.log('SIGNUP user got hit')
-    const newUser = new User(req.body)
-    const email = req.body.email;
+    const {email, password, username, role} = req.body;
+    const salt = await bcrypt.genSalt(5);
+    const hashedPassword = await bcrypt.hash(password,salt)
+    const user = {
+        email : email,
+        password : hashedPassword,
+        username:username,
+        role:role
+    }
+    const newUser = new User(user)
     try {
         const oldUser = await User.findOne({ email: email })
         if (oldUser) {

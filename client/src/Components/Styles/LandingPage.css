@@ -1,26 +1,7 @@
-
-
-.content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  flex-direction: column;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
-    Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
-  font-weight: 900;
-  background-image: linear-gradient(
-    45deg,
-    rgba(231, 231, 231, 0.632),
-    rgb(197, 238, 249),
-    rgb(246, 247, 249)
-  );
-}
-
 .home {
   padding: 10px;
   font-size: 1rem;
-  background:linear-gradient(45deg, transparent, #eb36e2);;
+  background: linear-gradient(45deg, transparent, #eb36e2);
   color: #fff;
   text-decoration: none;
   border: none;
@@ -32,7 +13,7 @@
 .Login {
   padding: 10px;
   font-size: 1rem;
-  background:linear-gradient(45deg, transparent, #ee31c8);
+  background: linear-gradient(45deg, transparent, #ee31c8);
   color: #fff;
   text-decoration: none;
   border: none;
@@ -72,8 +53,8 @@
   box-shadow: 0 0 5px rgb(128, 162, 229), 0 0 10px rgb(127, 127, 238),
     0 0 25px rgb(123, 123, 220), 0 0 50px rgb(109, 156, 252);
 }
-.image{
-  width: 70rem;
+.image {
+  width: 39rem;
 }
 .start {
   display: flex;
@@ -81,33 +62,50 @@
   align-items: flex-start;
   margin-left: 2.5rem;
 }
-.start > p{
+.home__txt {
   font-size: 3.5rem;
   font-weight: bolder;
 }
 
 .home-content {
+  height: 80vh;
   display: flex;
   align-items: center;
   flex-direction: row;
   justify-content: space-around;
+  background-image: linear-gradient(
+    45deg,
+    rgba(231, 231, 231, 0.632),
+    rgb(197, 238, 249),
+    rgb(246, 247, 249)
+  );
 }
 .content {
-  width: 100%;
   display: flex;
+  align-items: center;
+  height: 80vh;
+  width: 100%;
   flex-direction: row;
   justify-content: space-around;
+  font-weight: 900;
+}
+@media screen and (max-width: 714px) {
+  .image {
+    width: 300px;
+  }
 }
 
 @media screen and (max-width: 600px) {
-  .home__txt{
+  .home__txt {
     font-size: 2.3rem;
   }
   .content {
     justify-content: space-evenly;
     flex-direction: column;
   }
-
+  .home-content{
+    height: 83vh;
+  }
   .image {
     width: 300px;
   }
@@ -116,7 +114,7 @@
     text-align: center;
     margin-left: 0;
   }
-  .start > p{
+  .start > p {
     font-size: 2.4rem;
   }
   .start-coding-button {

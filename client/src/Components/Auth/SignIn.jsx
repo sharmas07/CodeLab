@@ -5,7 +5,7 @@ import axios from "axios";
 import i from "../../images/sign.jpg"
 import loader from "../../images/loader.gif"
 import { base_url } from "../../api";
-function SignIn() {
+function SignIn({setUserId}) {
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
   const [email, setEmail] = useState("");
@@ -21,18 +21,16 @@ function SignIn() {
   const handleLogin = async (e) => {
     setLoading(true)
     e.preventDefault();
-    const data = {
-      email,
-      password,
-    };
     console.log("handleLogin");
 
     const response = await axios.post(
       `${base_url}/auth/signin`,
       {email, password}
     );
-    localStorage.setItem('userId',response.data._id)
-    console.log(response.data._id)
+    console.log(response)
+    localStorage.setItem('userId',response.data.user._id)
+    localStorage.setItem('auth-token',response.data.auth_token)
+    // setUserId(response.data.user._id)
     navigate('/allquestions')
     setLoading(false)
   };

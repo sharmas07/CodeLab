@@ -9,6 +9,13 @@ import { base_url } from "../../api";
 import { questionsData } from "../question/questionsData";
 
 const CodeEditorPage = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    if(!localStorage.getItem('auth-token')){
+      navigate('/auth/signin')
+    }
+  }, [])
+  
   const { serialNo } = useParams();
   // TODO: get question from the DB using the serialNo and pass it to question text
 
@@ -37,6 +44,7 @@ const CodeEditorPage = () => {
       serialNo
     });
     setCompiling(false);
+    
     if (response.data.stderr) {
       setStderr(response.data.stderr);
       setOutput("");
@@ -159,6 +167,6 @@ const CodeEditorPage = () => {
   );
 };
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useRef, useState } from "react";
 export default CodeEditorPage;
