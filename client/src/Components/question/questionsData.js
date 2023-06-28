@@ -16,6 +16,78 @@ export const questionsData = [
     submit_testcase: "",
     input:""
   },
+  {
+    serialNo: "PY3",
+    questionName: "Data Types",
+    questionDescription: "Write a program to perform different numeric data types",
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
+  },
+  {
+    serialNo: "PY4",
+    questionName: "Arithmetic operations",
+    questionDescription: "Write a program to perform different arithmetic operations",
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
+  },
+  {
+    serialNo: "PY5",
+    questionName: "list operations",
+    questionDescription: "Write a program to perform different list operations",
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
+  },
+  {
+    serialNo: "PY6",
+    questionName: "Tuples",
+    questionDescription: "Write a program to demonstrate working of tuples",
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
+  },
+  {
+    serialNo: "PY7",
+    questionName: "Dictionaries",
+    questionDescription: "Write a program to demonstrate working with dictionaries ",
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
+  },
+  {
+    serialNo: "PY8",
+    questionName: "Array",
+    questionDescription: "Write a program to perform array ",
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
+  },
+  {
+    serialNo: "PY9",
+    questionName: "types slicing & numpy",
+    questionDescription: "Write a program to perform array slicing, integer indexing, Boolean array indexing along with thier basic operations of NumPy",
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
+  },
+  {
+    serialNo: "PY10",
+    questionName: "Statistics",
+    questionDescription: "Write a program to compute summary statistics such as mean, median, mode, standard deviation & variance of thier different data types. ",
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
+  },
+  {
+    serialNo: "PY11",
+    questionName: "Perform script user for the names of two text files",
+    questionDescription: "Write a program to perform script should prompt the user for the names of two text files. The contents of the first should be the input that to be written to second file.(script name should be copyfile.py)",
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
+  },
   // ... add more Python questions
 
   // C questions
@@ -35,6 +107,313 @@ export const questionsData = [
     submit_testcase: "",
     input:""
   },
+  {
+    serialNo: "C3",
+    questionName: "GCD of 2-integers in non-recur",
+    questionDescription: "Write a program to find the GCD of two given integers",
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
+  },
+  {
+    serialNo: "C4",
+    questionName: "Towers of Hanoi problem in non-recur",
+    questionDescription: "Write a program to solve Towers of Hanoi problem ",
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
+  },
+  {
+    serialNo: "C5",
+    questionName: "factorial in non-recur",
+    questionDescription: "Write a program to find the factorial of a given integer in non-recursive function ",
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
+  },
+  {
+    serialNo: "C6",
+    questionName: "GCD of 2-inte in recur",
+    questionDescription: "Write a program to find the GCD of two given integers in recursive function",
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
+  },
+  {
+    serialNo: "C7",
+    questionName: "Towers of Hanoi problem in recur",
+    questionDescription: "Write a program to solve Towers of Hanoi problem in recursive function",
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
+  },
+  {
+    serialNo: "C8",
+    questionName: "factorial in recur",
+    questionDescription: "Write a program to find the factorial of a given integer in recursive function ",
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
+  },
+  {
+    serialNo: "C9",
+    questionName: "largest & smallest number",
+    questionDescription: "Write a program to find the largest & smallest number in a list of integers",
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
+  },
+  {
+    serialNo: "C10",
+    questionName: "Addition of two matrices",
+    questionDescription: "Write a program to perform addition of two matrices",
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
+  },
+  {
+    serialNo: "C11",
+    questionName: "Multiplication of two matrices",
+    questionDescription: "Write a program to perform multiplication of two matrices",
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
+  },
+  {
+    serialNo: "C12",
+    questionName: "insert a sub-string in main string",
+    questionDescription: "Write a program to insert a sub-string in to a given main string from a given position ",
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
+  },
+  {
+    serialNo: "C13",
+    questionName: "deleting characters from strings",
+    questionDescription: "Write a program to delete n characters from a given postion in agiven string ",
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
+  },
+  {
+    serialNo: "C14",
+    questionName: "displaying the position in the string where the another string begins",
+    questionDescription: "Write a program to dispalys the postion or index in the string S where the string T begins, or -1 if S doesnt contain T.",
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
+  },
+  {
+    serialNo: "C15",
+    questionName: "counts lines,words & characters in a text",
+    questionDescription: "Write a program to count the lines, words, & characters in a given text.",
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
+  },
+  {
+    serialNo: "C16",
+    questionName: "arithmetic operations on pointer variables",
+    questionDescription: "Write a program to perform arthimetic operations on pointer variables.",
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
+  },
+  {
+    serialNo: "C17",
+    questionName: "parameter passing mechanisms call-by-value",
+    questionDescription: "Write a program to demonstrate the parameter passing mechanisms call-by-value.",
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
+  },
+  {
+    serialNo: "C18",
+    questionName: "parameter passing mechanisms call-by-reference",
+    questionDescription: "Write a program to demonstrate the parameter passing mechanism call-by-reference",
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
+  },
+  {
+    serialNo: "C19",
+    questionName: "reading a complex number",
+    questionDescription: "Write a program to read a complex number.",
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
+  },
+  {
+    serialNo: "C20",
+    questionName: "writing a complex number",
+    questionDescription: "Write a program to write a complex number",
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
+  },
+  {
+    serialNo: "C21",
+    questionName: "addition of two complex numbers",
+    questionDescription: "Write a program to perform  a addition of two complex numbers.",
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
+  },
+  {
+    serialNo: "C22",
+    questionName: "multuplication of two complex numbers",
+    questionDescription: "Write a program to perform a multiplication of two complex numbers",
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
+  },
+  {
+    serialNo: "C23",
+    questionName: "stack using arrays",
+    questionDescription: "Write a program to implemnt stack using arrays",
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
+  },
+  {
+    serialNo: "C24",
+    questionName: "stack using pointers",
+    questionDescription: "Write a program to implement stack using pointers",
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
+  },
+  {
+    serialNo: "C25",
+    questionName: "queue using arrays",
+    questionDescription: "Write a program to implement queue using arrays",
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
+  },
+  {
+    serialNo: "C26",
+    questionName: "queue using pointers",
+    questionDescription: "Write a program to implement queue using pointers",
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
+  },
+  {
+    serialNo: "C27",
+    questionName: "infix to postfix",
+    questionDescription: "Write a program to converting infix expression into postfix expression ",
+    run_testcase: "input the infix expression: 2+3*5  equivalent postfix expression:235*+",
+    submit_testcase: "input the infix expression:1+3*6 equivalent postfix expression:136*+",
+    input:""
+  },
+  {
+    serialNo: "C28",
+    questionName: "evaluate postfix expression",
+    questionDescription: "Write a program to evaluate the postfix expression",
+    run_testcase: "enter the expression: 235*+ the result of expression 235*+ = 17",
+    submit_testcase: "",
+    input:""
+  },
+  {
+    serialNo: "C29",
+    questionName: "operations on single linked list",
+    questionDescription: "Write a program to perform operations on single linked list.",
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
+  },
+  {
+    serialNo: "C30",
+    questionName: "operationns on double linked list",
+    questionDescription: "Write a program to perform operations on double linked list",
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
+  },
+  {
+    serialNo: "C31",
+    questionName: "operations on circular linked list",
+    questionDescription: "Write a program to perform operations on circular linked  list.",
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
+  },
+  {
+    serialNo: "C32",
+    questionName: "binary tree of integers",
+    questionDescription: "Write a program to create a binary tree with integers. ",
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
+  },
+  {
+    serialNo: "C33",
+    questionName: "traversing pre-order, in-order, post-order",
+    questionDescription: "Write a program to perform traversing the above binary tree i pre-order, in-order & post-order.",
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
+  },
+  {
+    serialNo: "C34",
+    questionName: "linear search in non-recur way",
+    questionDescription: "Write a program to perform the linear search on given list by using non-recursive function",
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
+  },
+  {
+    serialNo: "C35",
+    questionName: "linear search in recur way",
+    questionDescription: "Write a program to perform the linear search on given list by using recursive function ",
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
+  },
+  {
+    serialNo: "C36",
+    questionName: "binary search in non-recur way",
+    questionDescription: "Write a program to perform binary search on given list by using non-recursive function",
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
+  },
+  {
+    serialNo: "C37",
+    questionName: "binary search in recur way",
+    questionDescription: "Write a program to perform binary search on given list by using recursive function.",
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
+  },
+  {
+    serialNo: "C38",
+    questionName: "sorting methods 1",
+    questionDescription: "Write a program to sort a given list of integers in asceding order by using bubble sort.",
+    run_testcase: "enter the size of the list:5 enter 5 integer values: 50 40 30 20 10 list after sorting is: 10 20 30 40 50",
+    submit_testcase: "enter the size of the list:5 enter 5 integer values: 50 10 70 80 30 list after sorting is: 10 30 50 70 80 ",
+    input:""
+  },
+  {
+    serialNo: "C39",
+    questionName: "sorting methods 2",
+    questionDescription: "Write a program to sort a given list of integers in ascending order by using selection sort. ",
+    run_testcase: "enter the size of list:5 enter 5 integer values: 20 50 10 40 30 list after sorting is: 10 20 30 40 50 ",
+    submit_testcase: "enter the size of list:5 enter 5 integers values:20 70 45 80 50 list after sorting is: 20 45 50 70 80 ",
+    input:""
+  },
+  {
+    serialNo: "C40",
+    questionName: "sorting methods 3",
+    questionDescription: "Write a program to sort a given list of integers in ascending order by using insertion sort. ",
+    run_testcase: "enter the size of list:5  enter 5 integers values: 50 20 40 10 30 list after sorting is: 10 20 30 40 50",
+    submit_testcase: "enter the size of list:5 enter 5 integers values: 60 50 47 20 90 list after sorting is: 20 47 50 60 90",
+    input:""
+  },
+
+
+
   // ... add more C questions
 
   // Java questions
@@ -55,40 +434,12 @@ export const questionsData = [
     input:""
   },
   {
-    serialNo: "J1",
-    questionName: "Hello world",
-    questionDescription: "Write a program to print hello world in Java language",
-    testcase: "Hello world"
-  },
-  {
-    serialNo: "J2",
-    questionName: "Palindrome",
-    questionDescription: "Write a program to check if a string is a palindrome in Java",
-    testcase: "madam"
-  },
-  {
-    serialNo: "J1",
-    questionName: "Hello world",
-    questionDescription: "Write a program to print hello world in Java language",
-    testcase: "Hello world"
-  },
-  {
-    serialNo: "J2",
-    questionName: "Palindrome",
-    questionDescription: "Write a program to check if a string is a palindrome in Java",
-    testcase: "madam"
-  },
-  {
-    serialNo: "J1",
-    questionName: "Hello world",
-    questionDescription: "Write a program to print hello world in Java language",
-    testcase: "Hello world"
-  },
-  {
-    serialNo: "J2",
-    questionName: "Palindrome",
-    questionDescription: "Write a program to check if a string is a palindrome in Java",
-    testcase: "madam"
+    serialNo: "J",
+    questionName: "",
+    questionDescription: "Write a program to ",
+    run_testcase: "",
+    submit_testcase: "",
+    input:""
   },
   
   // ... add more Java questions

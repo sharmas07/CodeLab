@@ -13,6 +13,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    roll_no: String,
     role:{
         type:String,
         required:true

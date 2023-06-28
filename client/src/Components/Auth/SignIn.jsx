@@ -7,6 +7,7 @@ import loader from "../../images/loader.gif"
 import { base_url } from "../../api";
 function SignIn({setUserId}) {
   const [loading, setLoading] = useState(false)
+  const [AuthError, setAuthError] = useState(false)
   const navigate = useNavigate()
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -22,17 +23,22 @@ function SignIn({setUserId}) {
     setLoading(true)
     e.preventDefault();
     console.log("handleLogin");
-
-    const response = await axios.post(
-      `${base_url}/auth/signin`,
-      {email, password}
-    );
-    console.log(response)
-    localStorage.setItem('userId',response.data.user._id)
-    localStorage.setItem('auth-token',response.data.auth_token)
-    // setUserId(response.data.user._id)
-    navigate('/allquestions')
-    setLoading(false)
+    try {
+      const response = await axios.post(
+        `${base_url}/auth/signin`,
+        {email, password}
+      );
+      console.log(response)
+      localStorage.setItem('userId',response.data.user._id)
+      localStorage.setItem('auth-token',response.data.auth_token)
+      // setUserId(response.data.user._id)
+      navigate('/allquestions')
+      setLoading(false)  
+    } catch (error) {
+      setAuthError(true)
+      console.log(error)
+      setLoading(false)
+    }
   };
 
   return (
@@ -66,6 +72,7 @@ function SignIn({setUserId}) {
              </div>
              
             </div>
+            {AuthError && <p style={{color:'red', textAlign:'center'}}>something went wrong!</p>}
             <p>
               {" "}
               Don't have an account ? <Link to="/auth/signup">Sign Up</Link>

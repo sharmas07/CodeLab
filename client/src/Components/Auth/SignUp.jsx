@@ -7,12 +7,14 @@ import loader from "../../images/loader.gif"
 import { base_url } from "../../api";
 
 function SignUp({setUserId}) {
+  const [AuthError, setAuthError] = useState(false)
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate();
   const [username, setUser] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState("student"); // Default role is "student"
+  const [role, setRole] = useState("student");  // Default role is "student"
+  const [roll_no, setRollNo] = useState("");  
 
   const handleChangeUser = (e) => {
     setUser(e.target.value);
@@ -26,8 +28,8 @@ function SignUp({setUserId}) {
     setPassword(e.target.value);
   };
 
-  const handleChangeRole = (e) => {
-    setRole(e.target.value);
+  const handleChangeRollNo = (e) => {
+    setRollNo(e.target.value);
   };
 
   const handleSignUp = async (e) => {
@@ -54,6 +56,8 @@ function SignUp({setUserId}) {
       navigate("/allquestions");
       setLoading(false)
     } catch (error) {
+      setAuthError(true)
+      setLoading(false)
       console.error(error);
     }
   };
@@ -69,7 +73,7 @@ function SignUp({setUserId}) {
                 <label htmlFor="username">Username: </label>
                 <input
                   type="text"
-                  id="username"
+                  id="username"n
                   name="username"
                   onChange={handleChangeUser}
                   value={username}
@@ -100,6 +104,19 @@ function SignUp({setUserId}) {
                   name="email"
                   value={email}
                   onChange={handleChangeEmail}
+                  required="true"
+                />
+              </div>
+              <div>
+                <label htmlFor="email" className="email">
+                  Roll No:{" "}
+                </label>
+                <input
+                  type="text"
+                  id="roll-no"
+                  name="roll-no"
+                  value={roll_no}
+                  onChange={handleChangeRollNo}
                   required
                 />
               </div>
@@ -129,7 +146,7 @@ function SignUp({setUserId}) {
                 <br />
               </div> */}
             </div>
-
+            {AuthError && <p style={{color:'red', textAlign:'center'}}>something went wrong!</p>}
             <span onClick={handleSignUp} className={`btnElement_${loading?'loading':""}`}>
               {loading  ? <img style={{width:'40px'}} src={loader} alt="" />:'Sign Up'}
               
