@@ -24,7 +24,7 @@ function Question({ ques, quesStatus}) {
             <td>
               <b>{ques.serialNo}</b>
             </td>
-            <td>{ques.questionDescription}</td>
+            <td>{ques.questionName}</td>
             <td>
             <img style={{width:'25px'}} src={status?done:close} alt="" />
             </td>

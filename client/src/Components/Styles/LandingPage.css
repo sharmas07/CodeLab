@@ -77,7 +77,7 @@
     45deg,
     rgba(231, 231, 231, 0.632),
     rgb(197, 238, 249),
-    rgb(246, 247, 249)
+    #f6f7f9
   );
 }
 .content {
@@ -91,7 +91,7 @@
 }
 @media screen and (max-width: 714px) {
   .image {
-    width: 300px;
+    width: 254px;
   }
 }
 

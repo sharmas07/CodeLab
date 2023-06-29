@@ -34,7 +34,7 @@ header{
   margin-left: 10px;
   text-decoration: none;
 }
-.sidebar-show{
+.sidebar{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -49,10 +49,17 @@ header{
     bottom: 0;
     max-width: 70%;
     width: 70%;
+   
+}
+.sidebar-show{
+  transform: translateX(0);
+  transition: transform 0.3s ease-in-out;
 }
 .sidebar-hide{
-    display: none;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
 }
+
 .hamburger__btn{
     width: 2rem;
     display: none;

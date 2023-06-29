@@ -1,0 +1,38 @@
+.question-container {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .question-container h3 {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .question-container h5 {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+  
+  .testcase-section {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 2px solid #999;
+  }
+  
+  .testcase-section h6 {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .testcase-section p {
+    color: #444;
+    font-size: 14px;
+    margin: 5px 0;
+    padding-left: 10px;
+    border-left: 2px solid #999;
+  }
+  

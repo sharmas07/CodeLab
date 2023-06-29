@@ -92,7 +92,6 @@ const CodeEditorPage = () => {
 
 
 
-  //Dummy question
   useEffect(() => {
     const question = questionsData.find(item => item.serialNo === serialNo);
     setQuestion(question)
@@ -118,8 +117,10 @@ const CodeEditorPage = () => {
           id=""
         >
           <option value="71">python</option>
-          <option value="4">C</option>
-          <option value="21">Java</option>
+          <option value="50">C</option>
+          <option value="54">C++</option>
+          <option value="91">Java</option>
+          <option value="93">JavaScript</option>
         </select>
       </div>
       <Editor

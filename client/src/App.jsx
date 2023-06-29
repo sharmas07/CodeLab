@@ -13,9 +13,24 @@ import Footer from "./Components/common/Footer";
 function App() {
 
   const[showSidebar, setShowSidebar] = useState(false)
+  useEffect(() => {
+    const handleEscKey = (event) => {
+      if (event.keyCode === 27) {
+        // ESC key pressed
+        setShowSidebar(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleEscKey);
+
+    return () => {
+      document.removeEventListener("keydown", handleEscKey);
+    };
+  }, []);
+
   return (
     <div>
-      <div className={`sidebar-${showSidebar?'show':'hide'}`}>
+      <div className={`sidebar ${showSidebar ? "sidebar-show" : "sidebar-hide"}`}>
         <div className="SidebarObject">
         <div onClick={()=>setShowSidebar(!showSidebar)} > <span className="close">close</span> </div>
         <div><span className="Home">Home</span></div>
