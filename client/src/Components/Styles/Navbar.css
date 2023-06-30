@@ -75,3 +75,9 @@ header{
     }
 }
 
+.closeImg{
+  width: 30px;
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}

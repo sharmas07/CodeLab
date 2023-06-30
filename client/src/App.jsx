@@ -9,6 +9,8 @@ import CodeEditorPage from "../src/Components/CodeEditor/CodeEditorPage";
 import Navbar from "./Components/common/Navbar";
 import './Components/Styles/Navbar.css'
 import Footer from "./Components/common/Footer";
+import close from "./images/close.png";
+
 
 function App() {
   const[showSidebar, setShowSidebar] = useState(false)
@@ -16,8 +18,9 @@ function App() {
     <div>
       <div className={`sidebar-${showSidebar?'show':'hide'}`}>
         <div className="SidebarObject">
-        <div onClick={()=>setShowSidebar(!showSidebar)} > <span className="close">close</span> </div>
+        <div onClick={()=>setShowSidebar(!showSidebar)} ><img src={close} className="closeImg"  alt="" /> </div>
         <div><span className="Home">Home</span></div>
+        <div><span className="Home">Login</span></div>
         <div><span className="Home">Ques</span></div>
         </div>
     </div>
